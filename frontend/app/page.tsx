@@ -50,14 +50,14 @@ export default function HomePage() {
       </section>
 
       {/* About */}
-      <section id="about" className="py-20 h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="about" className="py-20 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16">
           <div className="p-4 md:p-8">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">About UNIDEV</h2>
-            <p className="text-lg text-gray-600 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">About UNIDEV</h2>
+            <p className="text-base sm:text-lg text-gray-600 mb-6">
               UNIDEV is a leading technology company dedicated to providing innovative solutions for businesses and individuals. With a team of experts in various fields, we strive to deliver cutting-edge products and services that meet the evolving needs of our clients.
             </p>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-base sm:text-lg text-gray-600 mb-8">
               Our mission is to empower organizations through technology, helping them achieve their goals and stay ahead in today's competitive landscape. We believe in the power of innovation and collaboration to drive positive change.
             </p>
             <Link href="#about">
@@ -65,7 +65,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="space-y-6">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">Our Projects</h3>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Our Projects</h3>
             <div className="space-y-4">
               {[
                 {
@@ -89,7 +89,7 @@ export default function HomePage() {
               ].map((project, index) => (
                 <div key={index} className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg transition-shadow">
                   <div className="flex justify-between items-start mb-3">
-                    <h4 className="text-lg font-semibold text-gray-900">{project.title}</h4>
+                    <h4 className="text-base sm:text-lg font-semibold text-gray-900">{project.title}</h4>
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                       project.status === 'Completed'
                         ? 'bg-green-100 text-green-800'
@@ -98,7 +98,7 @@ export default function HomePage() {
                       {project.status}
                     </span>
                   </div>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <p className="text-sm sm:text-base text-gray-600 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
                       <span key={tech} className="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-xs font-medium">
@@ -120,7 +120,8 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Leadership Team</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">Experienced professionals driving innovation and excellence at UNIDEV ENTERPRISE</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="overflow-x-auto pb-4">
+            <div className="flex gap-8 min-w-max">
             {MEMBERS.map(({ name, role, image, bio, expertise }) => (
               <div key={name} className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="relative h-80 overflow-hidden bg-gray-200">
