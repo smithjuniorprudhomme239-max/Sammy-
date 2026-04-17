@@ -120,10 +120,10 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Leadership Team</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">Experienced professionals driving innovation and excellence at UNIDEV ENTERPRISE</p>
           </div>
-          <div className="overflow-x-auto pb-4">
-            <div className="flex gap-8 min-w-max">
+          <div className="md:hidden overflow-x-auto pb-4 scrollbar-hide">
+            <div className="flex gap-4 min-w-max">
             {MEMBERS.map(({ name, role, image, bio, expertise }) => (
-              <div key={name} className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 w-72 sm:w-80">
+              <div key={name} className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 w-72">
                 <div className="relative h-80 overflow-hidden bg-gray-200">
                   <img src={image} alt={name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 </div>
@@ -142,6 +142,27 @@ export default function HomePage() {
               </div>
             ))}
             </div>
+          </div>
+          <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {MEMBERS.map(({ name, role, image, bio, expertise }) => (
+              <div key={name} className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300">
+                <div className="relative h-80 overflow-hidden bg-gray-200">
+                  <img src={image} alt={name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div className="px-6 py-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">{name}</h3>
+                  <p className="text-sm font-semibold text-blue-600 mb-3">{role}</p>
+                  <p className="text-sm text-gray-600 mb-4">{bio}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {expertise.map((skill) => (
+                      <span key={skill} className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
