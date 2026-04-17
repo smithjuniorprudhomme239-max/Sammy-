@@ -123,7 +123,7 @@ export default function HomePage() {
           <div className="overflow-x-auto pb-4">
             <div className="flex gap-8 min-w-max">
             {MEMBERS.map(({ name, role, image, bio, expertise }) => (
-              <div key={name} className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div key={name} className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 w-72 sm:w-80">
                 <div className="relative h-80 overflow-hidden bg-gray-200">
                   <img src={image} alt={name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 </div>
@@ -141,6 +141,7 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>
