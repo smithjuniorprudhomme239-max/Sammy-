@@ -77,7 +77,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-gray-100 bg-white px-4 py-3 h-[calc(100vh-4rem)] flex flex-col justify-center items-center space-y-6">
+        <div className="md:hidden border-t border-gray-100 bg-white px-4 pt-2.5 h-[calc(100vh-4rem)] flex flex-col justify-start items-center space-y-6">
           {NAV_LINKS.map((l) => (
             <Link key={l.href} href={l.href} className="text-sm text-gray-700" onClick={() => setOpen(false)}>
               {l.label}
