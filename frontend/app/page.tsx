@@ -101,7 +101,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="space-y-6">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Our Projects</h3>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Our Projects</h3>
             <div className="space-y-4">
               {[
                 {
@@ -153,7 +153,7 @@ export default function HomePage() {
       <section id="members" className="py-20 bg-white px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Leadership Team</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Leadership Team</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">Experienced professionals driving innovation and excellence at UNIDEV ENTERPRISE</p>
           </div>
           <div className="md:hidden overflow-x-auto pb-4 scrollbar-hide">
@@ -208,7 +208,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5"></div>
         <div className="relative max-w-7xl mx-auto w-full">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">Have questions or want to work with us? Reach out and we'll get back to you as soon as possible.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 md:gap-16">
