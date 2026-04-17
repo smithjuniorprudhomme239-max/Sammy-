@@ -33,6 +33,11 @@ export default function Footer() {
             </div>
           ))}
         </div>
+        <div className="md:hidden mt-8 pt-6">
+          <button className="w-full bg-white text-primary-500 font-semibold py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors">
+            Install App
+          </button>
+        </div>
         <div className="border-t border-gray-700 mt-8 pt-6 text-sm text-center">
           © {new Date().getFullYear()} UNIDEV. All rights reserved.
         </div>
