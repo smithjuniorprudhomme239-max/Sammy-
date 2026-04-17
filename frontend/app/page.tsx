@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-500 to-blue-900 text-white h-screen flex items-center px-4 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-primary-500 to-blue-900 text-white h-[90vh] flex items-center px-4 relative overflow-hidden">
         <div className="absolute inset-0" style={{ backgroundImage: "url('https://i.postimg.cc/zXy6zYJL/futuristic-smart-city-with-5g-global-network-technology.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', filter: 'blur(1px) brightness(0.4)', transform: 'scale(1.02)' }} />
         <div className="relative max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">
