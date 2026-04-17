@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import { ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
 import Button from '@/components/ui/Button';
 
@@ -11,6 +12,41 @@ const MEMBERS = [
 ];
 
 export default function HomePage() {
+  const [displayText, setDisplayText] = useState('');
+  const [isTyping, setIsTyping] = useState(true);
+  const [index, setIndex] = useState(0);
+  const fullText = 'UNIDEV ENTERPRISE';
+  
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    
+    if (isTyping) {
+      if (index < fullText.length) {
+        timeoutId = setTimeout(() => {
+          setDisplayText(prev => prev + fullText[index]);
+          setIndex(prev => prev + 1);
+        }, 150);
+      } else {
+        timeoutId = setTimeout(() => {
+          setIsTyping(false);
+        }, 1000);
+      }
+    } else {
+      if (index > 0) {
+        timeoutId = setTimeout(() => {
+          setDisplayText(prev => prev.slice(0, -1));
+          setIndex(prev => prev - 1);
+        }, 100);
+      } else {
+        timeoutId = setTimeout(() => {
+          setIsTyping(true);
+        }, 500);
+      }
+    }
+    
+    return () => clearTimeout(timeoutId);
+  }, [isTyping, index, fullText]);
+  
   return (
     <div>
       {/* Hero */}
@@ -18,7 +54,7 @@ export default function HomePage() {
         <div className="absolute inset-0" style={{ backgroundImage: "url('https://i.postimg.cc/zXy6zYJL/futuristic-smart-city-with-5g-global-network-technology.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', filter: 'blur(1px) brightness(0.4)', transform: 'scale(1.02)' }} />
         <div className="relative max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">
-            UNIDEV ENTERPRISE
+            {displayText}
           </h1>
           <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique fugiat deserunt quas. Sint ipsa harum quam saepe nisi.          </p>
