@@ -149,6 +149,56 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Services */}
+      <section id="services" className="py-20 bg-gray-50 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive technology solutions tailored to your business needs</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Software Development',
+                description: 'Custom software solutions designed to meet your specific business requirements.',
+                icon: '💻'
+              },
+              {
+                title: 'Cloud Services',
+                description: 'Scalable cloud infrastructure and migration services for modern businesses.',
+                icon: '☁️'
+              },
+              {
+                title: 'Digital Transformation',
+                description: 'Strategic consulting to help your business adapt to the digital age.',
+                icon: '🚀'
+              },
+              {
+                title: 'AI & Machine Learning',
+                description: 'Intelligent solutions powered by artificial intelligence and machine learning.',
+                icon: '🤖'
+              },
+              {
+                title: 'Cybersecurity',
+                description: 'Comprehensive security solutions to protect your business from threats.',
+                icon: '🔒'
+              },
+              {
+                title: 'IT Consulting',
+                description: 'Expert guidance to optimize your IT infrastructure and operations.',
+                icon: '📊'
+              }
+            ].map((service, index) => (
+              <div key={index} className="bg-white rounded-xl border border-gray-200 p-8 hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Members */}
       <section id="members" className="py-20 bg-white px-4">
         <div className="max-w-7xl mx-auto">
