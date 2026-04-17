@@ -9,34 +9,19 @@ export default function Footer() {
   const deferredPrompt = useRef<any>(null);
 
   useEffect(() => {
-    console.log('Footer useEffect running');
-    
-    const checkIfInstalled = () => {
-      const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
-      console.log('Is standalone:', isStandalone);
-      setIsAppInstalled(isStandalone);
-    };
-
-    checkIfInstalled();
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+    setIsAppInstalled(isStandalone);
 
     const mediaQuery = window.matchMedia('(display-mode: standalone)');
-    const handleChange = (e: MediaQueryListEvent) => {
-      console.log('Display mode changed:', e.matches);
-      setIsAppInstalled(e.matches);
-    };
-
+    const handleChange = (e: MediaQueryListEvent) => setIsAppInstalled(e.matches);
     mediaQuery.addEventListener('change', handleChange);
 
     const handleBeforeInstallPrompt = (e: Event) => {
-      console.log('beforeinstallprompt event fired');
       e.preventDefault();
       deferredPrompt.current = e;
       setCanInstall(true);
-      console.log('Can install set to true');
     };
-
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-    console.log('Added beforeinstallprompt listener');
 
     return () => {
       mediaQuery.removeEventListener('change', handleChange);
