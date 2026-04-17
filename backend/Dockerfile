@@ -1,0 +1,9 @@
+FROM node:20-alpine AS base
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+
+FROM base AS final
+COPY src ./src
+EXPOSE 5000
+CMD ["node", "src/server.js"]
